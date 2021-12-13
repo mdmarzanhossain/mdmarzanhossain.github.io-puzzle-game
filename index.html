@@ -16,11 +16,12 @@
         <div class="offset-md-4 col-md-4">
             <label for="userInput" class="form-label mt-1">Enter Pair Value</label>
             <input type="number" class="form-control" id="userInput">
-            <button id="userButton" class="btn btn-primary mt-3 mb-2">Submit</button>
+            <button id="userButton" class="btn btn-primary mt-3 mb-2">Play Game</button>
         </div>
     </div>
     <div class="row">
-        <div class="result"></div>
+        <div class="col-md-4 point"></div>
+        <div class="col-md-4 result text-center"></div>
     </div>
     <div class="row">
         <div class="puzzle-items mt-2 text-center">
@@ -124,9 +125,10 @@
                     //imgTest removed so that complete image can't be invisible
 
                     point++;
+                    $('.point').html(`<p><b>Point ${point} / ${userInput}</b></p>`);
                    // console.log("Point " + point + " userInput" + userInput);
                     if (point === userInput){
-                        $(".result").html("<b>You Win</b>");
+                        $(".result").html("<img src='images/win.png'>");
                     }
                     $(".imgbtn").removeClass("test");
 
@@ -207,6 +209,7 @@
             alert('Please enter a number between 2 to 8')
         }
         else{
+            $('.point').html(`<p><b>Point ${point} / ${userInput}</b></p>`);
             appendItem();
         }
     })
