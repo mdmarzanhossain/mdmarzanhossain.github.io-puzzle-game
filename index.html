@@ -15,7 +15,7 @@
     <div class="row">
         <div class="offset-md-4 col-md-4">
             <label for="userInput" class="form-label mt-1">Enter Pair Value</label>
-            <input type="number" class="form-control" id="userInput">
+            <input type="number" class="form-control" id="userInput" min="2" max="8">
             <button id="userButton" class="btn btn-primary mt-3 mb-2">Play Game</button>
         </div>
     </div>
@@ -114,12 +114,12 @@
             // 2 ta click hole check korbe then match korle class remove korbe. na korleo remove korbe.
             if($(".test").length === 2){
                 $(".imgbtn").removeClass("test");
-                console.log("2 button clicked");
+                //console.log("2 button clicked");
                 if(pairArrayValue[0] === pairArrayValue[1]){
                     $('.done').addClass('complete'); //// complete class added
                     $('.complete').off('click');  // off added so that image can't be clicked
                     $('.done').removeClass('imgbtn'); // for more secure imgbtn removed so that it can't be click
-                    $('.complete').children().removeClass("imgTest");
+                    $('.complete').children().removeClass("imgTest"); //imgTest removed so that image will not disappear
 
                     //In setTimeout image is selected using imgTest
                     //imgTest removed so that complete image can't be invisible
